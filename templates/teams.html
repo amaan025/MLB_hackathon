@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLB Teams</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/teams" class="active">Teams</a></li>
+            <li><a href="/players">Players</a></li>
+        </ul>
+    </nav>
+
+    <!-- Teams Page -->
+    <header class="welcome-section">
+        <h1>MLB Teams</h1>
+    </header>
+
+    <main>
+        <section class="teams-section">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Team</th>
+                        <th>Location</th>
+                        <th>League</th>
+                        <th>Division</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for team in teams %}
+                    <tr>
+                        <td>{{ team.team }}</td>
+                        <td>{{ team.locationName }}</td>
+                        <td>{{ team.league_name }}</td>
+                        <td>{{ team.division_name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

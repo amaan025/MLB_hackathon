@@ -1,0 +1,226 @@
+/* Navbar */
+.navbar {
+    background-color: #002D62;
+    color: white;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    margin-top: 1rem;
+    color: #00509E;
+}
+
+.welcome-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Sections */
+section {
+    margin: 2rem auto;
+    padding: 1.5rem;
+    max-width: 800px;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    text-align: center;
+    color: #002D62;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.no-game {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th,
+table td {
+    padding: 0.8rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #002D62;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #00509E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003F72;
+}
+
+/* Countdown */
+.next-game-countdown {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.next-game-countdown h3 {
+    font-size: 1.5rem;
+    color: #002D62;
+    margin-bottom: 0.5rem;
+}
+
+#countdown-timer {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #D32F2F;
+}
+
+/* Teams Section */
+.teams-section {
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 800px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.teams-section table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.teams-section th, .teams-section td {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+}
+
+.teams-section th {
+    background-color: #002D62;
+    color: white;
+    text-align: center;
+}
+
+.teams-section td {
+    text-align: center;
+}
+
+.teams-section tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Center Heading */
+.welcome-section h1 {
+    text-align: center;
+    color: #002D62;
+    margin-bottom: 1rem;
+}
+
+/* Search Form */
+.player-search {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.player-search input {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.player-search button {
+    padding: 0.5rem 1rem;
+    background-color: #00509E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.player-search button:hover {
+    background-color: #003F72;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Player Details */
+.player-details {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+.player-details img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.player-details h2 {
+    color: #002D62;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.player-details p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+

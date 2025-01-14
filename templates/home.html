@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLB Fan Hub</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/teams">Teams</a></li>
+            <li><a href="/players">Players</a></li>
+        </ul>
+    </nav>
+
+    <!-- Welcome Section -->
+    <header class="welcome-section">
+        <h1>Welcome to MLB Fan Hub</h1>
+    </header>
+
+    <!-- Featured Game Section -->
+    <main>
+        <section class="featured-game">
+            <h2>Featured Game</h2>
+            {% if featured_game %}
+                <div class="game-details">
+                    <p><strong>Teams:</strong> {{ featured_game['teams']['home']['team']['name'] }} vs {{ featured_game['teams']['away']['team']['name'] }}</p>
+                    <p><strong>Time:</strong> {{ featured_game['gameDate'] }}</p>
+                    <p><strong>Venue:</strong> {{ featured_game['venue']['name'] }}</p>
+                </div>
+            {% else %}
+                <p class="no-game">No featured game available today.</p>
+            {% endif %}
+
+            <!-- Countdown to Next Game -->
+            {% if next_game %}
+            <div class="next-game-countdown">
+                <h3>Next Game Countdown</h3>
+                <p><strong>Teams:</strong> {{ next_game['teams']['home']['team']['name'] }} vs {{ next_game['teams']['away']['team']['name'] }}</p>
+                <p><strong>Time:</strong> {{ next_game['gameDate'] }}</p>
+                <p><strong>Venue:</strong> {{ next_game['venue']['name'] }}</p>
+                <div id="countdown-timer" data-game-time="{{ next_game['gameDate'] }}"></div>
+            </div>
+            {% endif %}
+        </section>
+
+        <!-- Upcoming Games Section -->
+        <section class="upcoming-games">
+            <h2>Upcoming Games</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Teams</th>
+                        <th>Time</th>
+                        <th>Venue</th>
+                    </tr>
+                </thead>
+                <tbody id="upcoming-games-table">
+                    {% for game in upcoming_games %}
+                    <tr>
+                        <td>{{ game['teams']['home']['team']['name'] }} vs {{ game['teams']['away']['team']['name'] }}</td>
+                        <td>{{ game['gameDate'] }}</td>
+                        <td>{{ game['venue']['name'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button id="load-more-upcoming">Load More</button>
+        </section>
+
+        <!-- Past Games Section -->
+        <section class="past-games">
+            <h2>Past Games</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Teams</th>
+                        <th>Time</th>
+                        <th>Venue</th>
+                    </tr>
+                </thead>
+                <tbody id="past-games-table">
+                    {% for game in past_games %}
+                    <tr>
+                        <td>{{ game['teams']['home']['team']['name'] }} vs {{ game['teams']['away']['team']['name'] }}</td>
+                        <td>{{ game['gameDate'] }}</td>
+                        <td>{{ game['venue']['name'] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <button id="load-more-past">Load More</button>
+        </section>
+    </main>
+</body>
+</html>
