@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MLB Players</title>
     <link rel="stylesheet" href="/static/css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="/static/script.js" defer></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -24,7 +22,6 @@
     </header>
 
     <main>
-        <!-- Search Form Section -->
         <section class="player-search">
             <form method="POST" action="/players">
                 <input type="text" name="team_name" placeholder="Enter Team Name" required>
@@ -36,19 +33,11 @@
             {% endif %}
         </section>
 
-        <!-- Interactive Graph Section -->
-        <section class="player-graph">
-            <h2>Most Followed MLB Players</h2>
-            <div class="graph-container">
-                <canvas id="most-followed-players-graph"></canvas>
-            </div>
-        </section>
-
         <!-- Player Details -->
         {% if player_details %}
         <section class="player-details">
             <h2>{{ player_details.fullName }}</h2>
-            <img src="{{ player_details.headshot_url }}" alt="Player Headshot" class="player-headshot">
+            <img src="{{ player_details.headshot_url }}" alt="Player Headshot">
             <p><strong>Position:</strong> {{ player_details.primaryPosition.name }}</p>
             <p><strong>Age:</strong> {{ player_details.currentAge }}</p>
             <p><strong>Birthplace:</strong> {{ player_details.birthCity }}, {{ player_details.birthCountry }}</p>
@@ -60,76 +49,5 @@
         </section>
         {% endif %}
     </main>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            // Fetch data for the Most Followed Players graph
-            fetch("/api/top-followed-players")
-                .then(response => response.json())
-                .then(data => {
-                    if (data.error) {
-                        console.error(data.error);
-                        return;
-                    }
-
-                    const playerNames = data.map(player => player.player_name);
-                    const followers = data.map(player => player.followers);
-
-                    // Create the graph with Chart.js
-                    const ctx = document.getElementById('most-followed-players-graph').getContext('2d');
-                    new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: playerNames,
-                            datasets: [{
-                                label: 'Followers',
-                                data: followers,
-                                backgroundColor: 'rgba(0, 123, 255, 0.5)',
-                                borderColor: 'rgba(0, 123, 255, 1)',
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            scales: {
-                                x: {
-                                    beginAtZero: true,
-                                    ticks: {
-                                        font: {
-                                            size: 14,
-                                            weight: 'bold'
-                                        }
-                                    }
-                                },
-                                y: {
-                                    beginAtZero: true,
-                                    ticks: {
-                                        font: {
-                                            size: 14,
-                                            weight: 'bold'
-                                        }
-                                    }
-                                }
-                            },
-                            plugins: {
-                                title: {
-                                    display: true,
-                                    text: 'Most Followed MLB Players',
-                                    font: {
-                                        size: 18,
-                                        weight: 'bold'
-                                    }
-                                },
-                                legend: {
-                                    display: false
-                                }
-                            }
-                        }
-                    });
-                })
-                .catch(error => console.error("Error fetching top followed players data:", error));
-        });
-    </script>
 </body>
 </html>

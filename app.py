@@ -58,37 +58,6 @@ def fetch_player_details(team_name, player_name):
     except Exception as e:
         return {"error": str(e)}
 
-def fetch_most_followed_players():
-    """Fetch and process most followed players data for graph."""
-    try:
-        url = "https://storage.googleapis.com/gcp-mlb-hackathon-2025/datasets/mlb-fan-content-interaction-data/2025-mlb-fan-favs-follows.json"
-        response = requests.get(url)
-        response.raise_for_status()
-
-        # Read JSON lines and count player IDs
-        player_counts = {}
-        for line in response.text.strip().split("\n"):
-            entry = eval(line)  # Parse each JSON object
-            for player_id in entry.get("followed_player_ids", []):
-                player_counts[player_id] = player_counts.get(player_id, 0) + 1
-
-        # Sort players by followers and fetch top 10
-        sorted_players = sorted(player_counts.items(), key=lambda x: x[1], reverse=True)[:10]
-
-        # Enrich player data with their names
-        enriched_data = []
-        for player_id, count in sorted_players:
-            player_info = requests.get(f"https://statsapi.mlb.com/api/v1/people/{player_id}").json()
-            enriched_data.append({
-                "player_name": player_info["people"][0]["fullName"],
-                "followers": count
-            })
-
-        return enriched_data
-
-    except Exception as e:
-        return {"error": str(e)}
-
 @app.route('/')
 def home():
     try:
@@ -144,7 +113,6 @@ def teams():
 def players():
     player_details = None
     error = None
-    top_followed_players = fetch_most_followed_players()
 
     if request.method == 'POST':
         team_name = request.form.get('team_name')
@@ -159,17 +127,7 @@ def players():
         else:
             error = "Please provide both team name and player name."
 
-    return render_template(
-        'players.html',
-        player_details=player_details,
-        error=error,
-        top_followed_players=top_followed_players
-    )
-
-@app.route('/api/top-followed-players')
-def api_top_followed_players():
-    """API endpoint for the top followed players."""
-    return jsonify(fetch_most_followed_players())
+    return render_template('players.html', player_details=player_details, error=error)
 
 if __name__ == '__main__':
     app.run(debug=True)
