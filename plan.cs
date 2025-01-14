@@ -2,17 +2,17 @@ mlb_fan_coach/
 │
 ├── app.py                # Main Flask app
 ├── templates/            # HTML templates
-│   ├── base.html         # Base layout (navbar + common structure)
-│   ├── home.html         # Homepage
-│   ├── schedule.html     # Schedule functionality
+│   ├── home.html         # Base layout
+│   ├── teams.html         # Display teams data
+│   ├── players.html     # Display players data
 │
-├── static/               # Static files
-│   ├── css/              # CSS for styling
-│   │   └── styles.css    # Main CSS file
-│   ├── js/               # JavaScript for interactivity (if needed)
-│   └── images/           # Placeholder for images
+├── static/               # Static files folder
+│   ├── css/              # CSS styling folder
+│   │   └── styles.css    # Main CSS 
+│   ├── script.js/               # JavaScript interactivity
+│ 
 │
 ├── utils/                # Utility functions
-│   └── schedule_utils.py # Functions for schedule fetching and logic
+│   └── schedule_utils.py # Functions to utilise APIs
 │
 └── requirements.txt      # Python dependencies

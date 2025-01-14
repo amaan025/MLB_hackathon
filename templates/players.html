@@ -16,12 +16,13 @@
         </ul>
     </nav>
 
-    <!-- Search Form -->
+    <!-- Page Header -->
     <header class="welcome-section">
         <h1>Search MLB Players</h1>
     </header>
 
     <main>
+        <!-- Player Search Form -->
         <section class="player-search">
             <form method="POST" action="/players">
                 <input type="text" name="team_name" placeholder="Enter Team Name" required>
@@ -33,7 +34,7 @@
             {% endif %}
         </section>
 
-        <!-- Player Details -->
+        <!-- Player Details Section -->
         {% if player_details %}
         <section class="player-details">
             <h2>{{ player_details.fullName }}</h2>

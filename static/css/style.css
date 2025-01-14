@@ -1,226 +1,221 @@
-/* Navbar */
+/* Navbar Styles */
 .navbar {
-    background-color: #002D62;
-    color: white;
-    padding: 0.5rem;
-    display: flex;
-    justify-content: center;
+    background-color: #002D62; /* Navy background for the navbar */
+    color: white; /* White text for navbar links */
+    padding: 0.5rem; /* Padding around the navbar */
+    display: flex; /* Flex layout for horizontal alignment */
+    justify-content: center; /* Center the navbar items */
 }
 
 .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 1.5rem;
+    list-style: none; /* Remove default list styling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Flex layout for items */
+    gap: 1.5rem; /* Spacing between navbar items */
 }
 
 .navbar li {
-    display: inline;
+    display: inline; /* Inline display for list items */
 }
 
 .navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+    color: white; /* White text color */
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold; /* Bold font for links */
 }
 
 .navbar a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
 }
 
-/* Welcome Section */
+/* Welcome Section Styles */
 .welcome-section {
-    text-align: center;
-    margin-top: 1rem;
-    color: #00509E;
+    text-align: center; /* Center-align the content */
+    margin-top: 1rem; /* Add margin at the top */
+    color: #00509E; /* Blue text color */
 }
 
 .welcome-section h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
+    font-size: 2.5rem; /* Large font size */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 1rem; /* Add space below heading */
 }
 
-/* Sections */
+/* General Section Styles */
 section {
-    margin: 2rem auto;
-    padding: 1.5rem;
-    max-width: 800px;
-    background: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto; /* Center section with margin */
+    padding: 1.5rem; /* Padding inside the section */
+    max-width: 800px; /* Restrict width for readability */
+    background: #f4f4f4; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 section h2 {
-    text-align: center;
-    color: #002D62;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    text-align: center; /* Center-align headings */
+    color: #002D62; /* Navy text color */
+    font-size: 1.8rem; /* Slightly large font size */
+    margin-bottom: 1rem; /* Space below heading */
 }
 
 .no-game {
-    text-align: center;
-    color: red;
-    font-weight: bold;
+    text-align: center; /* Center-align text */
+    color: red; /* Red text color for emphasis */
+    font-weight: bold; /* Bold text for visibility */
 }
 
-/* Tables */
+/* Table Styles */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
+    width: 100%; /* Full width table */
+    border-collapse: collapse; /* Remove space between cells */
+    margin-top: 1rem; /* Space above the table */
 }
 
 table th,
 table td {
-    padding: 0.8rem;
-    text-align: center;
-    border: 1px solid #ddd;
+    padding: 0.8rem; /* Padding inside cells */
+    text-align: center; /* Center-align content */
+    border: 1px solid #ddd; /* Light gray border */
 }
 
 table th {
-    background-color: #002D62;
-    color: white;
+    background-color: #002D62; /* Navy background for header cells */
+    color: white; /* White text in header */
 }
 
 table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Alternate row background color */
 }
 
 table tr:hover {
-    background-color: #f1f1f1;
+    background-color: #f1f1f1; /* Highlight row on hover */
 }
 
+/* Button Styles */
 button {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #00509E;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    margin-top: 1rem; /* Space above button */
+    padding: 0.5rem 1rem; /* Padding inside button */
+    background-color: #00509E; /* Blue background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
 button:hover {
-    background-color: #003F72;
+    background-color: #003F72; /* Darker blue on hover */
 }
 
-/* Countdown */
+/* Countdown Timer Styles */
 .next-game-countdown {
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: #f4f4f4;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem; /* Space above section */
+    padding: 1rem; /* Padding inside section */
+    background-color: #f4f4f4; /* Light gray background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    text-align: center; /* Center-align content */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .next-game-countdown h3 {
-    font-size: 1.5rem;
-    color: #002D62;
-    margin-bottom: 0.5rem;
+    font-size: 1.5rem; /* Medium font size */
+    color: #002D62; /* Navy text color */
+    margin-bottom: 0.5rem; /* Space below heading */
 }
 
 #countdown-timer {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #D32F2F;
+    font-size: 1.25rem; /* Medium-large font size */
+    font-weight: bold; /* Bold text */
+    color: #D32F2F; /* Red text for emphasis */
 }
 
-/* Teams Section */
+/* Teams Section Styles */
 .teams-section {
-    margin: 2rem auto;
-    padding: 1rem;
-    max-width: 800px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto; /* Center section with margin */
+    padding: 1rem; /* Padding inside section */
+    max-width: 800px; /* Restrict width */
+    background: white; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .teams-section table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+    width: 100%; /* Full width table */
+    border-collapse: collapse; /* Remove space between cells */
+    text-align: left; /* Left-align content */
 }
 
-.teams-section th, .teams-section td {
-    padding: 0.75rem;
-    border: 1px solid #ddd;
+.teams-section th,
+.teams-section td {
+    padding: 0.75rem; /* Padding inside cells */
+    border: 1px solid #ddd; /* Light gray border */
 }
 
 .teams-section th {
-    background-color: #002D62;
-    color: white;
-    text-align: center;
+    background-color: #002D62; /* Navy background for header cells */
+    color: white; /* White text in header */
+    text-align: center; /* Center-align header content */
 }
 
 .teams-section td {
-    text-align: center;
+    text-align: center; /* Center-align body content */
 }
 
 .teams-section tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Alternate row background */
 }
 
-/* Center Heading */
-.welcome-section h1 {
-    text-align: center;
-    color: #002D62;
-    margin-bottom: 1rem;
-}
-
-/* Search Form */
+/* Player Search Form Styles */
 .player-search {
-    text-align: center;
-    margin: 2rem auto;
+    text-align: center; /* Center-align content */
+    margin: 2rem auto; /* Center form with margin */
 }
 
 .player-search input {
-    padding: 0.5rem;
-    margin: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 0.5rem; /* Padding inside input fields */
+    margin: 0.5rem; /* Space around input fields */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
 }
 
 .player-search button {
-    padding: 0.5rem 1rem;
-    background-color: #00509E;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 0.5rem 1rem; /* Padding inside button */
+    background-color: #00509E; /* Blue background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
 }
 
 .player-search button:hover {
-    background-color: #003F72;
+    background-color: #003F72; /* Darker blue on hover */
 }
 
 .error {
-    color: red;
-    font-weight: bold;
+    color: red; /* Red text for errors */
+    font-weight: bold; /* Bold text for emphasis */
 }
 
-/* Player Details */
+/* Player Details Section Styles */
 .player-details {
-    text-align: center;
-    margin: 2rem auto;
+    text-align: center; /* Center-align content */
+    margin: 2rem auto; /* Center section with margin */
 }
 
 .player-details img {
-    max-width: 150px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
+    max-width: 150px; /* Restrict image size */
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 1rem; /* Space below image */
 }
 
 .player-details h2 {
-    color: #002D62;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    color: #002D62; /* Navy text color */
+    font-size: 2rem; /* Large font size */
+    margin-bottom: 1rem; /* Space below heading */
 }
 
 .player-details p {
-    font-size: 1rem;
-    margin: 0.5rem 0;
+    font-size: 1rem; /* Standard font size */
+    margin: 0.5rem 0; /* Space between paragraphs */
 }
-

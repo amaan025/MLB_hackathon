@@ -6,26 +6,30 @@ document.addEventListener("DOMContentLoaded", () => {
     if (countdownElement && nextGameTime) {
         const targetDate = new Date(nextGameTime);
 
+        // Update the countdown timer every second
         function updateCountdown() {
             const now = new Date();
             const diff = targetDate - now;
 
+            // If the countdown reaches zero
             if (diff <= 0) {
                 countdownElement.textContent = "The next game is starting now!";
-                clearInterval(interval);
+                clearInterval(interval); // Stop the timer
                 return;
             }
 
+            // Calculate days, hours, minutes, and seconds
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
             const minutes = Math.floor((diff / (1000 * 60)) % 60);
             const seconds = Math.floor((diff / 1000) % 60);
 
+            // Update the countdown element
             countdownElement.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
         }
 
-        updateCountdown();
-        const interval = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initialize countdown immediately
+        const interval = setInterval(updateCountdown, 1000); // Update every second
     }
 
     // Load More Buttons for Upcoming and Past Games
@@ -43,6 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`/api/upcoming-games?start=${upcomingDisplayed}&limit=10`)
             .then(response => response.json())
             .then(newGames => {
+                // Append new games to the upcoming games table
                 newGames.forEach(game => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
@@ -54,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
                 upcomingDisplayed += newGames.length;
 
+                // Hide the button if no more games are available
                 if (newGames.length < 10) {
                     loadMoreUpcoming.style.display = 'none';
                 }
@@ -65,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
         fetch(`/api/past-games?start=${pastDisplayed}&limit=10`)
             .then(response => response.json())
             .then(newGames => {
+                // Append new games to the past games table
                 newGames.forEach(game => {
                     const row = document.createElement('tr');
                     row.innerHTML = `
@@ -76,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
                 pastDisplayed += newGames.length;
 
+                // Hide the button if no more games are available
                 if (newGames.length < 10) {
                     loadMorePast.style.display = 'none';
                 }
